@@ -1,0 +1,119 @@
+/* Navbar styles */
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 8px 16px;
+  background-color: rgb(11, 11, 107); /* Added missing value */
+  height: 50px;
+  color: white;
+}
+
+/* Logo */
+.logo {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+/* Menu container */
+.menu-container {
+  flex: 1;
+  display: flex;
+  justify-content: end;
+}
+
+/* Menu */
+.menu {
+  list-style: none;
+  display: flex;
+  gap: 10px; /* Reduced gap for compactness */
+}
+
+/* Menu links */
+.menu li a {
+  text-decoration: none;
+  color: black;
+  font-size: 16px; /* Reduced font size for compactness */
+  padding: 5px 8px; /* Reduced padding for compactness */
+  color: white;
+}
+
+/* Dropdown styles */
+.dropdown {
+  position: relative;
+}
+
+.dropdown-menu {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: white;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  list-style: none;
+  padding: 10px;
+  margin: 0;
+  z-index: 1000;
+}
+
+.dropdown:hover .dropdown-menu {
+  display: block;
+}
+
+.dropdown-menu li {
+  padding: 5px 10px;
+}
+
+.dropdown-menu li a {
+  text-decoration: none;
+  color: black;
+  font-size: 16px;
+}
+
+/* Responsive - Mobile View */
+@media (max-width: 768px) {
+  .menu-container {
+    display: none;
+    position: absolute;
+    top: 65px;
+    right: 0;
+    background: white;
+    width: 100%;
+    text-align: center;
+    padding: 10px 0;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  .menu {
+    flex-direction: column;
+    gap: 20px;
+    width: 100%; /* Adjusted for full width */
+    text-align: start;
+  }
+  .menu-container.active {
+    display: flex;
+    flex-direction: column;
+    background-color: rgb(11, 11, 107);
+  }
+  .hamburger {
+    display: block;
+    cursor: pointer;
+    font-size: 24px;
+    padding: 5px;
+  }
+  .dropdown-menu {
+    position: static; /* Adjusted for mobile */
+    box-shadow: none; /* Simplified for mobile */
+  }
+  .dropdown:hover .dropdown-menu {
+    display: none; /* Disable hover on mobile */
+  }
+  .dropdown.active .dropdown-menu {
+    display: block; /* Controlled by click in mobile */
+  }
+}
+
+@media (min-width: 769px) {
+  .hamburger {
+    display: none;
+  }
+}

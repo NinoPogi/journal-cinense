@@ -1,0 +1,47 @@
+<!-- nav-bar.component.html -->
+<nav class="navbar">
+  <div class="logo">{{ title }}</div>
+  <div class="hamburger" (click)="toggleMenu()">☰</div>
+
+  <div class="menu-container" [ngClass]="{ active: menuOpen }">
+    <ul class="menu">
+      <li><a routerLink="/home" href="/home">Home</a></li>
+      <li><a routerLink="/submission" href="/submission">Submission</a></li>
+      <li class="dropdown">
+        <a>Editors & Reviewers</a>
+        <ul class="dropdown-menu">
+          <li>
+            <a routerLink="/editorsreviewers" href="/editorsreviewers"
+              >View All</a
+            >
+          </li>
+          <li>
+            <a routerLink="/editorsreviewers" href="/editorsreviewers"
+              >Join as a Reviewer</a
+            >
+          </li>
+        </ul>
+      </li>
+      <li><a routerLink="/current" href="/current">Current</a></li>
+
+      <li class="dropdown">
+        <a>Publication Archive</a>
+        <ul class="dropdown-menu">
+          <li>
+            <a routerLink="/pub-archive" href="/pub-archive">NCLS 2019</a>
+          </li>
+        </ul>
+      </li>
+
+      <li class="dropdown">
+        <a>Conference</a>
+        <ul class="dropdown-menu">
+          <li><a routerLink="/conference" href="/conference">ICLCS 2026</a></li>
+          <li><a routerLink="/conference" href="/conference">ICLCS 2028</a></li>
+          <li><a routerLink="/conference" href="/conference">ICLCS 203</a></li>
+        </ul>
+      </li>
+      <li><a routerLink="/contact" href="/contact">Contact</a></li>
+    </ul>
+  </div>
+</nav>
