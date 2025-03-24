@@ -1,5 +1,5 @@
 import { Routes } from '@angular/router';
-import { HomepageComponent } from './pages/homepage/homepage.component';
+import { HomePageComponent } from './pages/homepage/home-page.component';
 import { ConferencePageComponent } from './pages/conference-page/conference-page.component';
 import { ContactPageComponent } from './pages/contact-page/contact-page.component';
 import { EditorsreviewersPageComponent } from './pages/editorsreviewers-page/editorsreviewers-page.component';
@@ -8,12 +8,12 @@ import { SubmissionPageComponent } from './pages/submission-page/submission-page
 import { CurrentPageComponent } from './pages/current-page/current-page.component';
 
 export const routes: Routes = [
-  { path: 'home', component: HomepageComponent },
-  { path: 'conference', component: ConferencePageComponent },
+  { path: 'home', component: HomePageComponent },
+  // { path: 'conference', component: ConferencePageComponent },
   { path: 'contact', component: ContactPageComponent },
-  { path: 'editorsreviewers', component: EditorsreviewersPageComponent },
-  { path: 'pub-archive', component: PubArchivePageComponent },
-  { path: 'submission', component: SubmissionPageComponent },
+  { path: 'editorsandreviewers', component: EditorsreviewersPageComponent },
+  // { path: 'publicarchive', component: PubArchivePageComponent },
+  { path: 'submissions', component: SubmissionPageComponent },
   { path: 'current', component: CurrentPageComponent },
   { path: '', redirectTo: '/home', pathMatch: 'full' },
   { path: '**', redirectTo: '/home' },

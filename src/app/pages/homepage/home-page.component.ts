@@ -5,11 +5,11 @@ import { FormsModule } from '@angular/forms';
 @Component({
   selector: 'app-homepage',
   imports: [FormsModule, CommonModule],
-  templateUrl: './homepage.component.html',
+  templateUrl: './home-page.component.html',
   standalone: true,
-  styleUrl: './homepage.component.scss',
+  styleUrl: './home-page.component.scss',
 })
-export class HomepageComponent {
+export class HomePageComponent {
   name = '';
 
   userInput = signal('');
@@ -17,7 +17,7 @@ export class HomepageComponent {
   itemList: WritableSignal<string[]> = signal<string[]>([]);
 
   constructor() {
-    this.itemList = signal<string[]>(this.loadFromLocalStorage()); 
+    this.itemList = signal<string[]>(this.loadFromLocalStorage());
   }
 
   addItem() {

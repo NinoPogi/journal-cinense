@@ -1,12 +1,12 @@
 <!-- nav-bar.component.html -->
-<nav class="navbar">
+<!-- <nav class="navbar">
   <div class="logo">{{ title }}</div>
   <div class="hamburger" (click)="toggleMenu()">☰</div>
 
   <div class="menu-container" [ngClass]="{ active: menuOpen }">
     <ul class="menu">
       <li><a routerLink="/home" href="/home">Home</a></li>
-      <li><a routerLink="/submission" href="/submission">Submission</a></li>
+      <li><a routerLink="/submissions" href="/submission">Submission</a></li>
       <li class="dropdown">
         <a>Editors & Reviewers</a>
         <ul class="dropdown-menu">
@@ -42,6 +42,30 @@
         </ul>
       </li>
       <li><a routerLink="/contact" href="/contact">Contact</a></li>
+                
+    </ul>
+  </div>
+</nav> -->
+
+<nav class="navbar">
+  <div class="logo">{{ title }}</div>
+  <div class="hamburger" (click)="toggleMenu()">☰</div>
+
+  <div class="menu-container" [ngClass]="{ active: menuOpen }">
+    <ul class="menu">
+      <li class="dropdown" *ngFor="let menu of menuList()">
+        <a [routerLink]="[menu.route]">{{ menu.title }}</a>
+
+        <!-- Dropdown menu (only if there are valid subpages) -->
+        <ul
+          class="dropdown-menu"
+          *ngIf="menu.dropdown && getFilteredSubPages(menu).length > 0"
+        >
+          <li *ngFor="let sub of getFilteredSubPages(menu)">
+            <a [routerLink]="[sub.route]">{{ sub.title }}</a>
+          </li>
+        </ul>
+      </li>
     </ul>
   </div>
 </nav>
