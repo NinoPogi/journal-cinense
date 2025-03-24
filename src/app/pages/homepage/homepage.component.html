@@ -1,1 +1,10 @@
 <h1>This is home page</h1>
+
+<div class="container">
+  <input [(ngModel)]="userInput" placeholder="Enter item" />
+  <button (click)="addItem()">Add</button>
+
+  <ul>
+    <li *ngFor="let item of itemList()">{{ item }}</li>
+  </ul>
+</div>
